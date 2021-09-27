@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Regna Bootstrap Template</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="../static/img/favicon.png" rel="icon">
+  <link href="../static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="../static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="../static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../static/lib/animate/animate.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="../static/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: Regna
+    Theme URL: https://bootstrapmade.com/regna-bootstrap-onepage-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+</head>
+
+<body>
+
+  <!--==========================
+  Header
+  ============================-->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <!--<a href="#hero"><img src="img/logo.png" alt="" title="" /></img></a>-->
+        <!-- Uncomment below if you prefer to use a text logo -->
+        <h1><a href="#hero">Beer o'clock</a></h1>
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+        
+          <li><a href="/">Home</a></li>
+          <li class="menu-active"><a href="/user">Find your style</a></li>
+          <li><a href="/drink">Let's drink!</a></li>
+          <li><a href="#team">Beer Itinerary</a></li>
+          <li><a href="#contact">Beer Road Trip</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header>
+
+  <section id="hero">
+    <div class="hero-container">
+        <h2>Find Your Beer Style</h2>
+        <div class="col-xs-4">
+            <p><img src="../static/img/beer_map.png" alt="" width="600" class="img-responsive center-block"></p>
+        </div>
+        <form method="POST" action="/user">
+            <input name="username" style="margin-bottom:10px" class="form-control" type="text" placeholder="Enter your name in Eng">
+            <input name="favorite" style="margin-bottom:10px" class="form-control" type="text" placeholder="Enter your beer style">
+            <input type="submit" class="btn btn-outline-warning" value="Add" /> 
+        </form>
+    </div>
+  </section><!-- #hero -->
+
+
+
+    {% block alert %}
+    {% if alert_msg %}
+    <div class="alert alert-{{ alert_msg.type }}" role="alert">
+    {{ alert_msg.msg }}
+    </div>
+    {% endif %}
+    {% endblock %}
+
+
+</body>
+</html>

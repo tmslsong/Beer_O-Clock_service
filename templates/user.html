@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block alert %}
+{% if alert_msg %}
+<div class="alert alert-{{ alert_msg.type }}" role="alert">
+  {{ alert_msg.msg }}
+</div>
+{% endif %}
+{% endblock %}
+
+{% block title %}
+<h1>What's your Beer Style</h1>
+{% endblock %}
+
+{% block lead %}
+{% endblock %}
+
+{% block main_body %}
+<p><img src="../static/img/beer_map.png" alt="" width="1020" class="img-responsive center-block"></p>
+
+  <form method="POST" action="/user">
+    <input name="username" style="margin-bottom:10px" class="form-control" type="text" placeholder="Enter your name">
+    <input name="beer_pref" style="margin-bottom:10px" class="form-control" type="text" placeholder="Enter your favorite beer style">
+    <input type="submit" class="btn btn-outline-info" value="Add" /> 
+  </form>
+<br><br>
+<br><br>
+
+
+
+
+{% if beer_result %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="page-header">
+      <p><img src="../static/img/beer_trip.jpg" class="rounded mx-auto d-block" alt="" width="500"></p>
+      <br><br>
+      <h3>Beer o'clock이 추천하는 맥주는 Brewdog의 {{ beer_result.b_name }}입니다.</h3>
+      <br><br>
+      </div>
+      <p>
+      <h5>Description : {{ beer_result.b_desc }}%</h5>
+      <br>
+      <h5>알콜 도수는 {{ beer_result.b_abv }}%이며,</h5>
+      <h5>페어링 푸드로는 {{ beer_result.b_food }}을 추천합니다.</h5>
+      </p>
+      <br><br>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+{% endblock %}

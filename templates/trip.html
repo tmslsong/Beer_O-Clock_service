@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block alert %}
+{% if alert_msg %}
+<div class="alert alert-{{ alert_msg.type }}" role="alert">
+  {{ alert_msg.msg }}
+</div>
+{% endif %}
+{% endblock %}
+
+{% block title %}
+<h1>Beer Road Trip</h1>
+{% endblock %}
+
+{% block lead %}
+{% endblock %}
+
+{% block main_body %}
+<p><img src="../static/img/tripbeer.jpg" alt="" width="1000" class="img-responsive center-block"></p>
+<br><br><br>
+
+<form method="POST" action="/trip">
+    <input name="username" style="margin-bottom:10px" class="form-control" type="text" placeholder="이름을 다시 한번 입력해주세요">
+    <input name="destination" style="margin-bottom:10px" class="form-control" type="text" placeholder="여행을 떠나고 싶은 국가를 입력해주세요">
+    <input type="submit" class="btn btn-outline-info" value="Add" /> 
+</form>
+<br><br>
+<br><br>
+
+{% endblock %}
